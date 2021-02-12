@@ -1,6 +1,6 @@
 {
   "name": "weather-application",
-  "homepage": "https://jonnisairio.github.io/react-weather-application",
+  "homepage": "https://jonnisairio.github.io/weather-application-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
