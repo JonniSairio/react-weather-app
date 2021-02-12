@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: url('https://cdn.pixabay.com/photo/2015/03/26/09/47/sky-690293_960_720.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 4rem;
+	color: #fff;
+	text-shadow: 2px 2px 5px #111;
+	margin: 2rem 0;
+}
+
+.date-time {
+	color: #fff;
+	text-shadow: 2px 2px 5px #111;
+	font-size: 1.5rem;
+	margin-top: 2rem;
+}
+
+.error h1 {
+	margin: 1rem;
+	color: #fff;
+	text-shadow: 2px 2px 5px #111;
+}
+
+@media (max-width: 600px) {
+	header h1 {
+		font-size: 3rem;
+	}
+}

@@ -1,0 +1,42 @@
+.weather-search input {
+	height: 55px;
+	width: 300px;
+	font-size: 1.5rem;
+	padding: 0 2rem;
+	margin: 2rem 0;
+}
+
+.weather-search input:focus::placeholder {
+	color: transparent;
+}
+
+.weather-search button {
+	font-size: 1.3rem;
+	font-weight: bold;
+	font-size: 1.1.rem;
+	cursor: pointer;
+	padding: 0.75rem 2rem;
+	border: 2px solid rgb(255, 255, 255);
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.356);
+	color: #fff;
+	margin: 0 1rem;
+	transition: all 0.5s ease;
+}
+
+.weather-search button:hover {
+	background: transparent;
+}
+
+/*For smaller screen*/
+
+@media (max-width: 600px) {
+	.weather-search input {
+		width: 90%;
+		text-align: center;
+		margin-top: 0;
+	}
+	.weather-search button {
+		width: 70%;
+	}
+}

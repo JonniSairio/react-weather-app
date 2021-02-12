@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+ import React, { useState } from 'react';
+ import axios from 'axios';
+//components
+import Header from './components/Header';
+import WeatherSearch from './components/WeatherSearch';
+import WeatherData from './components/WeatherData';
+import Error from './components/Error';
 
-function App() {
+const App = () => {
+  const [cityWeatherInfo, setCityWeatherInfo] = useState();
+  const [error, setError] = useState();
+
+  const api_call = async e => {
+    e.preventDefault();
+    const cityName = e.target.elements.city.value;
+    if (!cityName) return setError("Please type in name of a city"), setCityWeatherInfo(null); 
+    const API_KEY = "f72c60ce2103e321cf8432f71a36a56a";
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
+    const request = axios.get(URL);
+    const response = await request;
+    setCityWeatherInfo(response.data);
+    setError(null);
+  }  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <WeatherSearch api_call={api_call} />
+      { cityWeatherInfo && <WeatherData cityWeatherInfo={cityWeatherInfo} /> }
+      { error && <Error error={error} /> }
     </div>
   );
 }
