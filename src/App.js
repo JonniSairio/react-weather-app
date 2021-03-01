@@ -14,7 +14,7 @@ const App = () => {
     e.preventDefault();
     const cityName = e.target.elements.city.value;
     if (!cityName) return setError("Please type in name of a city"), setCityWeatherInfo(null); 
-    const API_KEY = "f72c60ce2103e321cf8432f71a36a56a";
+    const API_KEY = process.env.REACT_APP_WEATHER_API;
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
     const request = axios.get(URL);
     const response = await request;
